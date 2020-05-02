@@ -5,6 +5,7 @@
         public int? Year { get; set; }
         public int? Rnd { get; set; }
         public string Player { get; set; }
+        public string FriendlyPlayerName { get; set; }
         public int? Pick { get; set; }
         public string POS { get; set; }
         public int? To { get; set; }

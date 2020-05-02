@@ -1,8 +1,8 @@
-﻿@using DolphinDraftHistory.Models
+@using DolphinDraftHistory.Models
 @inject HttpClient Http
-@page "/"
+@page "/history"
 
-<h1>Miami Dolphin Draft Picks: 2020</h1>
+<h1>Miami Dolphin Draft Picks History</h1>
 <hr/>
 
 @if (_draftPicks == null) {
@@ -12,7 +12,7 @@
 }
 else {
 
-    <table class="table table-bordered">
+      <table class="table table-bordered">
         <thead>
             <tr>
                 <th width="75px">Year</th>
@@ -40,7 +40,7 @@ else {
 
 @code {
     private DraftPick[] _draftPicks;
-    private const string ServiceEndpoint = "https://dolphin-api.azurewebsites.net/dolphindraft/year/2020";
+    private const string ServiceEndpoint = "https://dolphin-api.azurewebsites.net/dolphindraft";
     private async Task GetDraftPicks() => _draftPicks = await Http.GetFromJsonAsync<DraftPick[]>(ServiceEndpoint);
     protected override async Task OnInitializedAsync() => await GetDraftPicks();
 }
